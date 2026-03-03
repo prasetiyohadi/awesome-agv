@@ -66,6 +66,25 @@ Synthesize the findings into a **Root Cause Analysis**.
 *   **Validate Assumptions**: Verify configuration and versions first (e.g., "Task 1: Validate Current Schema").
 *   **Preserve Evidence**: Keep the specific trace IDs, log timestamps, or reproduction scripts.
 
+## Language-Specific Modules
+
+The `languages/` directory contains **modular, language-specific debugging guides**. When debugging a project, load the relevant language module to augment this protocol with language-specific tools, hypothesis categories, and validation strategies.
+
+**Convention:** Each module is a standalone markdown file at `languages/{language}.md`.
+
+**How to use:**
+1. Identify the primary language of the codebase being debugged
+2. Load the corresponding module from `languages/`
+3. Integrate its toolchain, hypothesis categories, and validation tasks into your debugging session
+
+**Available modules:**
+
+| Module | Languages/Runtimes |
+|---|---|
+| [Rust](languages/rust.md) | Rust (cargo, rustc, tokio) |
+
+> **Contributing new modules:** To add support for a new language, create `languages/{language}.md` following the structure of existing modules. Each module should include: a toolchain reference table, language-specific hypothesis categories, validation task patterns, and an error-type-to-first-action quick reference.
+
 ## Rule Compliance
 When debugging, verify against:
 - Error Handling Principles @error-handling-principles.md (proper error propagation)
